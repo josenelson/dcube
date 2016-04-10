@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/josenelson/dtree.git"
+    "url": "git+https://github.com/josenelson/dcube.git"
   },
   "keywords": [
     "d3",
