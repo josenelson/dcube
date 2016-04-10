@@ -2,10 +2,10 @@ import {expect, should }  from 'chai';
 import assert from 'assert';
 import d3 from 'd3';
 
-import DTree from '../src/index';
+import DCube from '../src/index';
 import { avgFunc } from '../test/utilities';
 
-let sampleTree,
+let sampleCube,
     sampleData = [
       { 'a': 1, 'f1': 12 },
       { 'a': 2, 'f1': 6 },
@@ -17,7 +17,7 @@ let sampleTree,
 
 describe('Contruction with facts', function() {
   beforeEach(function(done) {
-    sampleTree = DTree().
+    sampleCube = DCube().
       dimensions(['a']).
       facts([
         { name: 'f1_sum', reduce: d3.sum, map: x=>x.f1 },
@@ -28,9 +28,9 @@ describe('Contruction with facts', function() {
     done();
   });
 
-  describe('DTree.data([])', function () {
+  describe('DCube.data([])', function () {
     it('Should not crash on empty array', function (done) {
-      let tree = sampleTree();
+      let cube = sampleCube();
 
       const expectedResults = {
         1: { f1_sum: 12, f1_avg: 12  },
@@ -39,7 +39,7 @@ describe('Contruction with facts', function() {
         4: { f1_sum: 3,  f1_avg: 3   }
       }
 
-      tree.map((node) => {
+      cube.map((node) => {
         let result = expectedResults[node.key];
 
         expect(result).to.not.be.null;

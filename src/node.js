@@ -39,16 +39,14 @@ const Node = (dimensions, data, facts) => {
         keyValues[key] = {
           key: key,
           facts: {},
-          children: [],
           values: [d]
         };
 
         _groups.push(keyValues[key]);
       }
 
-      //TODO: recursion
       if(rmDimensions.length > 0)
-        keyValues[key].children.push(Node(rmDimensions, keyValues[key].values, facts));
+        keyValues[key].children = Node(rmDimensions, keyValues[key].values, facts);
 
       computeFacts(keyValues[key], data, facts);
     }
@@ -64,7 +62,7 @@ const Node = (dimensions, data, facts) => {
       return {
         key: x.key,
         facts: x.facts,
-        children: x.children.map( child=>child() ), //map here
+        children: x.children ? x.children() : [],
         values: x.values.map( (d)=>{ return d; } )
       }
     });

@@ -1,3 +1,3 @@
-import DTree from './tree';
+import DCube from './cube';
 
-export default DTree;
+export default DCube;

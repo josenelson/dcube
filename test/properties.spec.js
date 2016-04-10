@@ -1,30 +1,30 @@
 import {expect, should }  from 'chai';
 import assert from 'assert';
-import DTree from '../src/index';
+import DCube from '../src/index';
 
-let sampleTree;
+let sampleCube;
 
 describe('Properties', function() {
   beforeEach(function(done) {
-    sampleTree = DTree();
+    sampleCube = DCube();
     done();
   });
 
-  describe('DTree.dimensions() Get and Set', function () {
+  describe('DCube.dimensions() Get and Set', function () {
     it('Should return the supplied dimension array when no parameter is present', function (done) {
-      sampleTree.dimensions(['a', 'b', 'c']);
+      sampleCube.dimensions(['a', 'b', 'c']);
 
-      let result = sampleTree.dimensions();
+      let result = sampleCube.dimensions();
       expect(result).to.eql(['a', 'b', 'c']);
       done();
     });
   });
 
-  describe('DTree.facts() Get and Set', function () {
+  describe('DCube.facts() Get and Set', function () {
     it('Should return the supplied dimension array when no parameter is present', function (done) {
-      sampleTree.facts(['a', 'b', 'c']);
+      sampleCube.facts(['a', 'b', 'c']);
 
-      let result = sampleTree.facts();
+      let result = sampleCube.facts();
       expect(result).to.eql(['a', 'b', 'c']);
       done();
     });
