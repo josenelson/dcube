@@ -1,6 +1,6 @@
-import Node from './node';
+import Slice from './Slice';
 
-const DTree = function(){
+const DCube = function(){
   let _dimensions = [],
       _facts = [],
       _data = [],
@@ -8,7 +8,7 @@ const DTree = function(){
 
   let buildTree = function() {
     if(_dimensions.length == 0) return;
-    _rootNode = Node(_dimensions, _data, _facts);
+    _rootNode = Slice(_dimensions, _data, _facts);
   }
 
   const ret = function() {
@@ -40,4 +40,4 @@ const DTree = function(){
   return ret;
 };
 
-export { DTree as default };
+export { DCube as default };

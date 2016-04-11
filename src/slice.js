@@ -15,7 +15,7 @@ const computeFacts = (childNode, data, facts) => {
   }
 }
 
-const Node = (dimensions, data, facts) => {
+const Slice = (dimensions, data, facts) => {
   let _groups = [],
       _dimension = dimensions[0];
 
@@ -46,7 +46,7 @@ const Node = (dimensions, data, facts) => {
       }
 
       if(rmDimensions.length > 0)
-        keyValues[key].children = Node(rmDimensions, keyValues[key].values, facts);
+        keyValues[key].children = Slice(rmDimensions, keyValues[key].values, facts);
 
       computeFacts(keyValues[key], data, facts);
     }
@@ -72,4 +72,4 @@ const Node = (dimensions, data, facts) => {
   return ret;
 }
 
-export { Node as default };
+export { Slice as default };
