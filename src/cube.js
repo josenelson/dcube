@@ -1,4 +1,4 @@
-import Slice from './Slice';
+import Slice from './slice';
 
 const DCube = function(){
   let _dimensions = [],
