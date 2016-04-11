@@ -1,5 +1,5 @@
 {
-  "name": "dtree",
+  "name": "dcube",
   "version": "0.0.1",
   "description": "Data processing library for rich data presentations",
   "main": "lib/index.js",
@@ -21,9 +21,9 @@
   "author": "jose.nelson.afonseca@gmail.com",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/josenelson/dtree/issues"
+    "url": "https://github.com/josenelson/dcube/issues"
   },
-  "homepage": "https://github.com/josenelson/dtree#readme",
+  "homepage": "https://github.com/josenelson/dcube#readme",
   "devDependencies": {
     "babel-cli": "^6.7.5",
     "babel-core": "^6.7.6",
